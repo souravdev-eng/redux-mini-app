@@ -1,9 +1,11 @@
+import { combineReducers } from 'redux';
+
 const songsReducer = () => {
   return [
-    { type: 'Full Stack Engine', duration: '40:10' },
-    { type: 'Kubernintes Engine', duration: '66:40' },
-    { type: 'React Engine', duration: '79:19' },
-    { type: 'Backend Engine', duration: '54:51' },
+    { title: 'Full Stack Enginer', duration: '40:10' },
+    { title: 'Kubernintes Enginer', duration: '66:40' },
+    { title: 'React Enginer', duration: '79:19' },
+    { title: 'Backend Enginer', duration: '54:51' },
   ];
 };
 
@@ -13,3 +15,8 @@ const selectedSongReducer = (selectdSong = null, action) => {
   }
   return selectdSong;
 };
+
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
+});
